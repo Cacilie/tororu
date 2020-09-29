@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import { HashRouter, Route, Link } from "react-router-dom"; 
 import Home from './Components/HomeComponent';
 class App extends Component  {
 
 	render(){
 		return (
-		    <HashRouter basename="/">
+		    <HashRouter basename="/" className="fill-window">
                 <Route exact path="/" component={Home} />
 		    </HashRouter>
 
@@ -14,7 +13,6 @@ class App extends Component  {
 	}
 
 }
-
 
 
 export default App;
