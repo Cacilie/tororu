@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './HomeComponent.css'
 
 export default function Home() {
@@ -27,8 +27,18 @@ export default function Home() {
         }
 
         setValue(event.target.value)
+        localStorage.setItem("@tororu/value", event.target.value)
         setRows(currentRows < maxRows ? currentRows : maxRows)
+        localStorage.setItem("@tororu/rows", currentRows < maxRows ? currentRows : maxRows)
+        
     };
+    useEffect( () => {
+        let tororu_value = localStorage.getItem("@tororu/value")
+        let tororu_rows = localStorage.getItem("@tororu/rows")
+        setValue(tororu_value)
+        setRows(tororu_rows)
+
+    } , [])
 
     return (
             <textarea
