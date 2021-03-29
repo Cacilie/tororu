@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/tororu/static/css/main.d5b76566.chunk.css",
+    "main.css": "/tororu/static/css/main.3c7271ae.chunk.css",
     "main.js": "/tororu/static/js/main.277f31f9.chunk.js",
     "main.js.map": "/tororu/static/js/main.277f31f9.chunk.js.map",
     "runtime-main.js": "/tororu/static/js/runtime-main.0488441e.js",
@@ -8,15 +8,15 @@
     "static/js/2.c88e326a.chunk.js": "/tororu/static/js/2.c88e326a.chunk.js",
     "static/js/2.c88e326a.chunk.js.map": "/tororu/static/js/2.c88e326a.chunk.js.map",
     "index.html": "/tororu/index.html",
-    "precache-manifest.b1a2cca13d1112e30852fa9568cceb51.js": "/tororu/precache-manifest.b1a2cca13d1112e30852fa9568cceb51.js",
+    "precache-manifest.b9cd188139c45a493bcaeb9ec7d3ad6c.js": "/tororu/precache-manifest.b9cd188139c45a493bcaeb9ec7d3ad6c.js",
     "service-worker.js": "/tororu/service-worker.js",
-    "static/css/main.d5b76566.chunk.css.map": "/tororu/static/css/main.d5b76566.chunk.css.map",
+    "static/css/main.3c7271ae.chunk.css.map": "/tororu/static/css/main.3c7271ae.chunk.css.map",
     "static/js/2.c88e326a.chunk.js.LICENSE.txt": "/tororu/static/js/2.c88e326a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0488441e.js",
     "static/js/2.c88e326a.chunk.js",
-    "static/css/main.d5b76566.chunk.css",
+    "static/css/main.3c7271ae.chunk.css",
     "static/js/main.277f31f9.chunk.js"
   ]
 }
