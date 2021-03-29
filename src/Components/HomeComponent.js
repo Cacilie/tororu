@@ -28,8 +28,8 @@ export default function Home() {
 
         setValue(event.target.value)
         localStorage.setItem("@tororu/value", event.target.value)
-        setRows(currentRows < maxRows ? currentRows : maxRows)
-        localStorage.setItem("@tororu/rows", currentRows < maxRows ? currentRows : maxRows)
+        setRows(currentRows < maxRows ? currentRows + 200 : maxRows)
+        localStorage.setItem("@tororu/rows", currentRows < maxRows ? currentRows + 200 : maxRows)
         
     };
     useEffect( () => {
@@ -44,7 +44,7 @@ export default function Home() {
             <textarea
                 rows={rows}
                 value={value}
-                placeholder={'Start writting you next story...'}
+                placeholder={'Write!'}
                 className={'textarea'}
                 onChange={handleChange}
             />
