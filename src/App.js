@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Link } from "react-router-dom"; 
 import Home from './Components/HomeComponent';
-import About from './Components/AboutComponent';
+import Icon from './Components/IconComponent';
 
 class App extends Component  {
 
@@ -9,7 +9,7 @@ class App extends Component  {
 		return (
 		    <HashRouter basename="/" className="fill-window">
                 <Route exact path="/" component={Home} />
-                <Route exact path="/about" component={About} />
+                <Route exact path="/about" component={Icon} />
 
 		    </HashRouter>
 
