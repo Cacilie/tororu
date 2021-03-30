@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4fbc13d4503865a29a705523d1be58a4",
+    "revision": "2f428f5086dd98d22ae769c6365f368f",
     "url": "/tororu/index.html"
   },
   {
