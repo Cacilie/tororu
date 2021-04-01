@@ -13,7 +13,6 @@ export default function Home() {
         const textareaLineHeight = 24;
 
         const previousRows = event.target.rows;
-        event.target.rows = minRows; // reset number of rows in textarea 
 
         const currentRows = ~~(event.target.scrollHeight / textareaLineHeight);
 
@@ -28,8 +27,8 @@ export default function Home() {
 
         setValue(event.target.value)
         localStorage.setItem("@tororu/value", event.target.value)
-        setRows(currentRows < maxRows ? currentRows + 200 : maxRows)
-        localStorage.setItem("@tororu/rows", currentRows < maxRows ? currentRows + 200 : maxRows)
+        setRows(rows > currentRows ? rows : currentRows < maxRows ? currentRows + 200 : maxRows)
+        localStorage.setItem("@tororu/rows", rows > currentRows ? rows : currentRows < maxRows ? currentRows + 200 : maxRows)
         
     };
     useEffect( () => {
