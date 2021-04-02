@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './HomeComponent.css'
-import { Drawer, ButtonToolbar, Button } from 'rsuite';
-import 'rsuite/dist/styles/rsuite-default.css';
-
+import { Drawer, IconButton, Icon } from 'rsuite';
+import 'rsuite/dist/styles/rsuite-dark.css';
+import styled from '@emotion/styled'
+import { Collection } from 'japidb';
 
 export default function Home() {
-
+    const [show, setShow] = useState(false)
     const [value, setValue] = useState('');
     const [rows, setRows] = useState(5);
     const maxRows = 1000;
@@ -29,8 +30,8 @@ export default function Home() {
 
         setValue(event.target.value)
         localStorage.setItem("@tororu/value", event.target.value)
-        setRows(rows > currentRows ? rows : currentRows < maxRows ? currentRows  : maxRows)
-        localStorage.setItem("@tororu/rows", rows > currentRows ? rows : currentRows < maxRows ? currentRows  : maxRows)
+        setRows(rows > currentRows ? rows : currentRows < maxRows ? currentRows : maxRows)
+        localStorage.setItem("@tororu/rows", rows > currentRows ? rows : currentRows < maxRows ? currentRows : maxRows)
 
     };
     useEffect(() => {
@@ -38,29 +39,39 @@ export default function Home() {
         let tororu_rows = localStorage.getItem("@tororu/rows")
         setValue(tororu_value)
         setRows(tororu_rows)
-
     }, [])
+
+    const MenuToolbar = styled('ButtonToolbar')`
+      position: absolute;
+      margin-right: 30px;
+      margin-top: 10px;
+      right: 0;
+    `
+
+
 
     return (
         <div>
-            <Menu />
+            <Menu show={show} setShow={setShow} />
+            <MenuToolbar>
+                <IconButton icon={<Icon icon="align-justify" className={'menuIcons'} />}  appearance={'link'} onClick={() => setShow(true)} />
+            </MenuToolbar>
             <textarea
                 rows={rows}
-                value={value}
+                defaultValue={value}
                 placeholder={'Write!'}
                 className={'textarea'}
                 onChange={handleChange}
             />
-            
+
         </div>
 
     );
 }
 
 
-function Menu() {
+function Menu({ show, setShow }) {
 
-    const [show, setShow] = useState(false)
 
 
     return (
@@ -69,15 +80,16 @@ function Menu() {
                 size={'xs'}
                 show={show}
                 onHide={() => setShow(false)}
+                backdrop={false}
             >
                 <Drawer.Header>
-                    <Drawer.Title>Drawer Title</Drawer.Title>
+                    <Drawer.Title>トロール (Tororu)</Drawer.Title>
                 </Drawer.Header>
                 <Drawer.Body>
                 </Drawer.Body>
                 <Drawer.Footer>
-                    <Button onClick={() => setShow(false)} appearance="primary">Confirm</Button>
-                    <Button onClick={() => setShow(false)} appearance="subtle">Cancel</Button>
+                <IconButton icon={<Icon icon="plus" className={'menuIcons'} />}  appearance={'link'} onClick={() => setShow(true)} />
+
                 </Drawer.Footer>
             </Drawer>
         </div>
