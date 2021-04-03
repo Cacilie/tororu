@@ -3,7 +3,10 @@ import './HomeComponent.css'
 import { Drawer, IconButton, Icon } from 'rsuite';
 import 'rsuite/dist/styles/rsuite-dark.css';
 import styled from '@emotion/styled'
-import { Collection } from 'japidb';
+import { Collection, Item } from 'japidb';
+
+const stories = new Collection('Stories', 'id');
+const currentStoryId = new Item('currentStoryId', 0);
 
 export default function Home() {
     const [show, setShow] = useState(false)
@@ -28,17 +31,58 @@ export default function Home() {
             event.target.scrollTop = event.target.scrollHeight;
         }
 
+        const finalRows = rows > currentRows ? rows : currentRows < maxRows ? currentRows : maxRows
+
+        if(currentStoryId.get() === 0){
+            const id = Math.floor(Date.now() / 1000)
+
+            stories.save({
+                "id" : id,
+                "story" : event.target.value,
+                "rows" : finalRows
+            });
+
+            currentStoryId.save(id)
+        }else {
+            stories.save({
+                "id": currentStoryId.get(),
+                "story": event.target.value,
+                "rows": finalRows
+            })
+        }
+     
         setValue(event.target.value)
-        localStorage.setItem("@tororu/value", event.target.value)
-        setRows(rows > currentRows ? rows : currentRows < maxRows ? currentRows : maxRows)
-        localStorage.setItem("@tororu/rows", rows > currentRows ? rows : currentRows < maxRows ? currentRows : maxRows)
+        setRows(finalRows)
 
     };
     useEffect(() => {
+        
+
         let tororu_value = localStorage.getItem("@tororu/value")
         let tororu_rows = localStorage.getItem("@tororu/rows")
-        setValue(tororu_value)
-        setRows(tororu_rows)
+
+        //this code snippet is to save work from previous versions
+        if(tororu_value){
+            const id = Math.floor(Date.now() / 1000)
+            stories.save({
+                "id" : id,
+                "story" : tororu_value,
+                "rows" : tororu_rows
+            })
+
+            currentStoryId.save(id)
+            localStorage.removeItem("@tororu/value")
+            localStorage.removeItem("@tororu/rows")
+        }
+        // end of code snippet
+
+        let firstStory = stories.find({
+            "id" : currentStoryId.get()
+        })
+        if(firstStory.length > 0 ) firstStory = firstStory[0]        
+
+        setValue(firstStory.story)
+        setRows(firstStory.rows)
     }, [])
 
     const MenuToolbar = styled('ButtonToolbar')`

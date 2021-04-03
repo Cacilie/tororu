@@ -19,8 +19,8 @@ body {
     border: none;
     border-radius: 3px;
     resize: none;
-    font-size: 25px;
-    line-height: 25px;
+    font-size: 20px;
+    line-height: 20px;
     height: 100%;
     overflow: auto;
     width: 100%;
@@ -34,8 +34,8 @@ body {
 
 textarea::placeholder {
     color: white;
-    font-size: 25px;
-    line-height: 25px;
+    font-size: 20px;
+    line-height: 20px;
     font-family: Helvetica, sans-serif, serif;
 }
 
