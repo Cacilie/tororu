@@ -93,6 +93,9 @@ export default function Home() {
         let rows = displayStory ? displayStory.rows : 5
         setRows(rows)
         setStories(storiesApi.find())
+        if (window.matchMedia("(max-width: 400px)").matches) {
+            setShow(false)
+        }
     }
 
     const removeStory = (id) => {
@@ -105,6 +108,9 @@ export default function Home() {
         currentStoryId.save(0);
         setValue('')
         setRows(5)
+        if (window.matchMedia("(max-width: 400px)").matches) {
+            setShow(false)
+        }
     }
 
     const MenuToolbar = styled('ButtonToolbar')`
