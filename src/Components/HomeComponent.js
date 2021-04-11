@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import './HomeComponent.css'
 import { Drawer, IconButton, Icon, List } from 'rsuite';
-import 'rsuite/dist/styles/rsuite-dark.css';
+import 'rsuite/dist/styles/rsuite-default.css';
 import styled from '@emotion/styled'
 import { Collection, Item } from 'japidb';
 
 const storiesApi = new Collection('Stories', 'id');
 const currentStoryId = new Item('currentStoryId', 0);
 
+function countWords(str) {
+    var matches = str.match(/[\w\d\’\'-]+/gi);
+    return matches ? matches.length : 0;
+}
+
 export default function Home() {
     const [show, setShow] = useState(false)
     const [value, setValue] = useState('');
     const [rows, setRows] = useState(5);
     const [stories, setStories] = useState([])
+    const [words, setWords] = useState(0)
     const maxRows = 1000;
 
 
@@ -55,9 +61,11 @@ export default function Home() {
         setValue(event.target.value)
         setRows(finalRows)
         setStories(storiesApi.find())
+        setWords(countWords(event.target.value))
 
 
     };
+
     useEffect(() => {
 
         //this code snippet is to save work from previous versions
@@ -81,6 +89,7 @@ export default function Home() {
 
         setValue(displayStory ? displayStory.story : '')
         setRows(displayStory ? displayStory.rows : 5)
+        setWords(displayStory ? countWords(displayStory.story) : 0)
 
         setStories(storiesApi.find())
     }, [])
@@ -93,13 +102,13 @@ export default function Home() {
         let rows = displayStory ? displayStory.rows : 5
         setRows(rows)
         setStories(storiesApi.find())
-        if (window.matchMedia("(max-width: 400px)").matches) {
+        if (window.matchMedia("(max-width: 700px)").matches) {
             setShow(false)
         }
     }
 
     const removeStory = (id) => {
-        if(id === currentStoryId.get()) startNewStory()
+        if (id === currentStoryId.get()) startNewStory()
         storiesApi.remove(id)
         setStories(storiesApi.find())
     }
@@ -108,7 +117,7 @@ export default function Home() {
         currentStoryId.save(0);
         setValue('')
         setRows(5)
-        if (window.matchMedia("(max-width: 400px)").matches) {
+        if (window.matchMedia("(max-width: 700px)").matches) {
             setShow(false)
         }
     }
@@ -120,14 +129,13 @@ export default function Home() {
       right: 0;
     `
 
-
-
     return (
         <div>
             <Menu show={show} setShow={setShow} setCurrentStory={setCurrentStory} stories={stories} startNewStory={startNewStory} removeStory={removeStory} />
             <MenuToolbar>
                 <IconButton icon={<Icon icon="align-justify" className={'menuIcons'} />} appearance={'link'} onClick={() => setShow(true)} />
             </MenuToolbar>
+            <span id="wordCounter">Words - {words}</span>
             <textarea
                 rows={rows}
                 value={value}
@@ -143,9 +151,6 @@ export default function Home() {
 
 
 function Menu({ show, setShow, setCurrentStory, stories, startNewStory, removeStory }) {
-
-
-
     return (
         <div>
             <Drawer
@@ -162,7 +167,7 @@ function Menu({ show, setShow, setCurrentStory, stories, startNewStory, removeSt
                         {stories.map((story, index) => {
                             return (
                                 <List.Item key={story.id} index={index} >
-                                    {story.story.slice(0,35)}
+                                    {story.story.slice(0, 35)}
                                     <IconButton icon={<Icon icon="right" className={'menuIcons'} />} onClick={() => setCurrentStory(story.id)} appearance="subtle" />
                                     <IconButton icon={<Icon icon="trash" className={'menuIcons'} />} onClick={() => removeStory(story.id)} appearance="subtle" />
                                 </List.Item>
