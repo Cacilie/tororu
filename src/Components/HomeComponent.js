@@ -99,6 +99,7 @@ export default function Home() {
         let displayStory = storiesApi.get(currentStoryId.get())
         let story = displayStory ? displayStory.story : ''
         setValue(story)
+        setWords(countWords(story))
         let rows = displayStory ? displayStory.rows : 5
         setRows(rows)
         setStories(storiesApi.find())
