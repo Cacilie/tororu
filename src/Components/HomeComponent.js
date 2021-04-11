@@ -117,6 +117,7 @@ export default function Home() {
         currentStoryId.save(0);
         setValue('')
         setRows(5)
+        setWords(0)
         if (window.matchMedia("(max-width: 700px)").matches) {
             setShow(false)
         }
