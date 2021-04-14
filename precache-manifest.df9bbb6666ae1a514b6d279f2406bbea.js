@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "091d5c704926d49ec188fcee934a0445",
+    "revision": "9af3f8308f73734da42c5a35ce55789d",
     "url": "/tororu/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tororu/static/css/2.00fd0ec9.chunk.css"
   },
   {
-    "revision": "07f941579d38df72ff52",
-    "url": "/tororu/static/css/main.4b4fd116.chunk.css"
+    "revision": "ee3f07b7d09beab6aa25",
+    "url": "/tororu/static/css/main.d87bbfd4.chunk.css"
   },
   {
     "revision": "4ace27e95ab6543ab5bd",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tororu/static/js/2.7938810b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "07f941579d38df72ff52",
+    "revision": "ee3f07b7d09beab6aa25",
     "url": "/tororu/static/js/main.283aba2a.chunk.js"
   },
   {
