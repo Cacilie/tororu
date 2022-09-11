@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/tororu/static/css/main.d87bbfd4.chunk.css",
-    "main.js": "/tororu/static/js/main.283aba2a.chunk.js",
-    "main.js.map": "/tororu/static/js/main.283aba2a.chunk.js.map",
+    "main.css": "/tororu/static/css/main.a1681b1d.chunk.css",
+    "main.js": "/tororu/static/js/main.c5f460c4.chunk.js",
+    "main.js.map": "/tororu/static/js/main.c5f460c4.chunk.js.map",
     "runtime-main.js": "/tororu/static/js/runtime-main.0488441e.js",
     "runtime-main.js.map": "/tororu/static/js/runtime-main.0488441e.js.map",
     "static/css/2.00fd0ec9.chunk.css": "/tororu/static/css/2.00fd0ec9.chunk.css",
     "static/js/2.7938810b.chunk.js": "/tororu/static/js/2.7938810b.chunk.js",
     "static/js/2.7938810b.chunk.js.map": "/tororu/static/js/2.7938810b.chunk.js.map",
     "index.html": "/tororu/index.html",
-    "precache-manifest.df9bbb6666ae1a514b6d279f2406bbea.js": "/tororu/precache-manifest.df9bbb6666ae1a514b6d279f2406bbea.js",
+    "precache-manifest.9d9a4d5f3bcd5e0196e8325d64433c71.js": "/tororu/precache-manifest.9d9a4d5f3bcd5e0196e8325d64433c71.js",
     "service-worker.js": "/tororu/service-worker.js",
     "static/css/2.00fd0ec9.chunk.css.map": "/tororu/static/css/2.00fd0ec9.chunk.css.map",
-    "static/css/main.d87bbfd4.chunk.css.map": "/tororu/static/css/main.d87bbfd4.chunk.css.map",
+    "static/css/main.a1681b1d.chunk.css.map": "/tororu/static/css/main.a1681b1d.chunk.css.map",
     "static/js/2.7938810b.chunk.js.LICENSE.txt": "/tororu/static/js/2.7938810b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0488441e.js",
     "static/css/2.00fd0ec9.chunk.css",
     "static/js/2.7938810b.chunk.js",
-    "static/css/main.d87bbfd4.chunk.css",
-    "static/js/main.283aba2a.chunk.js"
+    "static/css/main.a1681b1d.chunk.css",
+    "static/js/main.c5f460c4.chunk.js"
   ]
 }
