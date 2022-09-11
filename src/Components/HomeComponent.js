@@ -138,6 +138,7 @@ export default function Home() {
                 <IconButton icon={<Icon icon="align-justify" className={'menuIcons'} />} appearance={'link'} onClick={() => setShow(true)} />
             </MenuToolbar>
             <span id="wordCounter">Words - {words}</span>
+            
             <textarea
                 rows={rows}
                 value={value}
@@ -160,6 +161,7 @@ function Menu({ show, setShow, setCurrentStory, stories, startNewStory, removeSt
                 show={show}
                 onHide={() => setShow(false)}
                 backdrop={false}
+                placement="bottom"
             >
                 <Drawer.Header>
                     <Drawer.Title>トロール (Tororu)</Drawer.Title>
