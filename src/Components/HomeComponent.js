@@ -157,14 +157,14 @@ function Menu({ show, setShow, setCurrentStory, stories, startNewStory, removeSt
     return (
         <div>
             <Drawer
-                size={'xs'}
+                size={'lg'}
                 show={show}
                 onHide={() => setShow(false)}
                 backdrop={false}
                 placement="bottom"
             >
                 <Drawer.Header>
-                    <Drawer.Title>トロール (Tororu)</Drawer.Title>
+                    <Drawer.Title>トロール (Tororu v1.5.0)</Drawer.Title>
                 </Drawer.Header>
                 <Drawer.Body>
                     <List bordered>
