@@ -157,7 +157,7 @@ function Menu({ show, setShow, setCurrentStory, stories, startNewStory, removeSt
     return (
         <div>
             <Drawer
-                size={'md'}
+                size={'sm'}
                 show={show}
                 onHide={() => setShow(false)}
                 backdrop={false}
