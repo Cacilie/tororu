@@ -60,7 +60,7 @@ textarea:focus {
         border: none;
         border-radius: 3px;
         resize: none;
-        font-size: 16px;
+        font-size: 18pt;
         line-height: 14px;
         height: 100%;
         overflow: auto;
