@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/tororu/precache-manifest.31d56321cf26d8f91d43ff6253b2dc3d.js"
+  "/tororu/precache-manifest.92bff2e7d3954586d7f62cd9a7dc6942.js"
 );
 
 self.addEventListener('message', (event) => {
