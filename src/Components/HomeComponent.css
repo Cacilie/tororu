@@ -1,0 +1,84 @@
+body {
+    background-color: aliceblue;
+}
+
+#wordCounter {
+    position: absolute;
+    padding-left: 70px;
+    bottom: 10px;
+}
+
+#root {
+    /*background-color: #343D46;*/
+    background-color: aliceblue;
+
+    overflow: hidden;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.menuIcons {
+    color: black;
+}
+
+.textarea {
+    box-sizing: border-box;
+    border: none;
+    border-radius: 3px;
+    resize: none;
+    font-size: 20px;
+    line-height: 20px;
+    height: 100%;
+    overflow: auto;
+    width: 100%;
+    padding-top: 50px;
+    padding-left: 70px;
+    font-family: Helvetica, sans-serif, serif;
+    background-color: aliceblue;
+    /*background-color: #343D46;*/
+    color: black;
+
+}
+
+textarea::placeholder {
+    color: black;
+    font-size: 20px;
+    line-height: 20px;
+    font-family: Helvetica, sans-serif, serif;
+}
+
+
+textarea:focus {
+    outline: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .textarea {
+        box-sizing: border-box;
+        border: none;
+        border-radius: 3px;
+        resize: none;
+        font-size: 18pt;
+        line-height: 14px;
+        height: 100%;
+        overflow: auto;
+        width: 100%;
+        padding-top: 40px;
+        padding-left: 30px;
+        font-family: Helvetica, sans-serif, serif;
+        background-color: aliceblue;
+        /*background-color: #343D46;*/
+        color: black;
+    
+    }
+    
+    textarea::placeholder {
+        color: black;
+        font-size: 14px;
+        line-height: 14px;
+        font-family: Helvetica, sans-serif, serif;
+    }
+
+}
